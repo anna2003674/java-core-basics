@@ -24,15 +24,31 @@ public class ClassesAndObjects {
 }
 
 class Person {
-    String name;
-    int age;
+    private String name;
+    private int age;
 
-    void setName(String username) {
-        name = username;
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    void setName(String name) {
+        if (name.isEmpty()) {
+            System.out.println("Ты ввел пустое имя");
+        } else {
+            this.name = name;
+        }
     }
 
     void setAge(int age) {
-        this.age = age;
+        if (age < 0) {
+            System.out.println("Возраст должен быть положительным");
+        } else {
+            this.age = age;
+        }
     }
 
     void setNameAndAge(String name, int age) {
